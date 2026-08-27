@@ -1,0 +1,137 @@
+
+ .budget-card {
+  background-color: var(--bg-card);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.budget-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.budget-icon-bg {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.budget-icon {
+  font-size: 1.4rem;
+}
+
+.budget-title-area {
+  flex: 1;
+  min-width: 0;
+}
+
+.budget-name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.budget-percentage {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Progress Bar */
+
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: var(--bg-secondary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+/* Budget Figures */
+
+.budget-figures {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.figure-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.figure-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.figure-value {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.figure-value.spent {
+  color: var(--accent-gold);
+}
+
+.figure-value.allocated {
+  color: var(--text-primary);
+}
+
+.figure-divider {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .budget-card {
+    padding: 20px;
+  }
+
+  .budget-icon-bg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .budget-name {
+    font-size: 1rem;
+  }
+
+  .budget-figures {
+    padding: 10px 12px;
+  }
+
+  .figure-value {
+    font-size: 0.95rem;
+  }
+}
