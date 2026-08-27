@@ -1,0 +1,103 @@
+.review-card {
+  background-color: var(--bg-card);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.review-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-primary);
+}
+
+.review-user-info {
+  flex: 1;
+}
+
+.review-user-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.review-event-tag {
+  font-size: 0.8rem;
+  color: var(--accent-secondary);
+  font-weight: 600;
+}
+
+.quote-icon {
+  color: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.review-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.review-date {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--text-subtle);
+}
+
+.review-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.verified-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--accent-emerald);
+  font-weight: 700;
+}
+
+.check-icon {
+  color: var(--accent-emerald);
+}
+.helpful-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid var(--border-gold);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.review-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+}
