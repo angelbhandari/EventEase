@@ -83,24 +83,6 @@ const SignupPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setGeneralError('');
-    if (!validate()) return;
-
-    setIsLoading(true);
-    const result = await signup({
-      fullName,
-      email,
-      phone,
-      password,
-    });
-    setIsLoading(false);
-
-    if (result.success) {
-      addToast(`Account created successfully! Welcome to EventEase, ${result.user.name}.`, 'success');
-      navigate('/dashboard', { replace: true });
-    } else {
-      setGeneralError(result.error);
-    }
   };
 
   return (
