@@ -1,5 +1,4 @@
-
- .budget-card {
+.budget-card {
   background-color: var(--bg-card);
   padding: 24px;
   border-radius: var(--radius-md);
@@ -8,6 +7,17 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  transition: all var(--transition-fast);
+}
+
+.budget-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.budget-card.card-over-budget {
+  border-color: var(--color-coral);
+  background-color: var(--color-coral-light);
 }
 
 .budget-card-header {
@@ -50,8 +60,39 @@
   font-weight: 700;
 }
 
-/* Progress Bar */
+.budget-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
+.card-action-btn {
+  background: var(--bg-main);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.card-action-btn:hover {
+  color: var(--color-gold-dark);
+  border-color: var(--color-gold);
+  background: #ffffff;
+}
+
+.card-action-btn.delete-btn:hover {
+  color: var(--color-coral-dark);
+  border-color: var(--color-coral);
+  background: var(--color-coral-light);
+}
+
+/* Progress Bar */
 .progress-bar-container {
   width: 100%;
   height: 8px;
@@ -67,25 +108,24 @@
 }
 
 /* Budget Figures */
-
 .budget-figures {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-main);
   padding: 12px 16px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-subtle);
 }
 
 .figure-box {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
 }
 
 .figure-label {
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -98,7 +138,7 @@
 }
 
 .figure-value.spent {
-  color: var(--accent-gold);
+  color: var(--color-gold-dark);
 }
 
 .figure-value.allocated {
@@ -106,32 +146,13 @@
 }
 
 .figure-divider {
-  color: var(--text-primary);
+  color: var(--text-muted);
   font-weight: 600;
   font-size: 1.1rem;
 }
 
-/* Responsive */
-
 @media (max-width: 600px) {
   .budget-card {
-    padding: 20px;
-  }
-
-  .budget-icon-bg {
-    width: 44px;
-    height: 44px;
-  }
-
-  .budget-name {
-    font-size: 1rem;
-  }
-
-  .budget-figures {
-    padding: 10px 12px;
-  }
-
-  .figure-value {
-    font-size: 0.95rem;
+    padding: 18px;
   }
 }

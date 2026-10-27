@@ -1,13 +1,37 @@
-
-import React from 'react';
 import { Trash2, Plus, Minus } from 'lucide-react';
-
+import { useDispatch } from 'react-redux';
+import { increaseQuantity, decreaseQuantity, removeFromCart } from '../store/cartSlice';
 import './CartItemCard.css';
 
 const CartItemCard = ({ item, onAction }) => {
+  const dispatch = useDispatch();
+
+  const handleDecrease = () => {
+    if (onAction) {
+      onAction('decrease', item.id);
+    } else {
+      dispatch(decreaseQuantity(item.id));
+    }
+  };
+
+  const handleIncrease = () => {
+    if (onAction) {
+      onAction('increase', item.id);
+    } else {
+      dispatch(increaseQuantity(item.id));
+    }
+  };
+
+  const handleRemove = () => {
+    if (onAction) {
+      onAction('remove', item.id);
+    } else {
+      dispatch(removeFromCart(item.id));
+    }
+  };
+
   return (
     <div className="cart-item-card glass-card">
-
       {/* Image */}
       <div className="cart-item-image-box">
         <img
@@ -20,25 +44,31 @@ const CartItemCard = ({ item, onAction }) => {
       {/* Item Information */}
       <div className="cart-item-info">
         <span className="cart-item-event">
-          {item.eventName}
+          {item.eventName || item.category}
         </span>
 
         <h4 className="cart-item-theme">
           {item.themeName}
         </h4>
 
-        <span className="cart-item-unit-price">
-          ₹{item.price.toLocaleString('en-IN')} / package
-        </span>
+        {item.selectedPackage && (
+          <span className="cart-item-package-tag">
+            {item.selectedPackage}
+          </span>
+        )}
 
+        <span className="cart-item-unit-price">
+          ₹{Number(item.price).toLocaleString('en-IN')} / package
+        </span>
       </div>
 
-      {/* Quantity */}
+      {/* Quantity Controls */}
       <div className="cart-item-qty">
-
         <button
+          type="button"
           className="qty-btn"
-          onClick={() => onAction('Decrease Quantity')}
+          onClick={handleDecrease}
+          aria-label="Decrease quantity"
         >
           <Minus size={14} />
         </button>
@@ -48,36 +78,35 @@ const CartItemCard = ({ item, onAction }) => {
         </span>
 
         <button
+          type="button"
           className="qty-btn"
-          onClick={() => onAction('Increase Quantity')}
+          onClick={handleIncrease}
+          aria-label="Increase quantity"
         >
           <Plus size={14} />
         </button>
-
       </div>
 
-      {/* Total Price */}
+      {/* Subtotal */}
       <div className="cart-item-subtotal">
-
         <span className="subtotal-label">
-          Total
+          Subtotal
         </span>
-
         <span className="subtotal-amount">
-          ₹{(item.price * item.quantity).toLocaleString('en-IN')}
+          ₹{(Number(item.price) * Number(item.quantity)).toLocaleString('en-IN')}
         </span>
-
       </div>
 
-      {/* Remove */}
+      {/* Remove Button */}
       <button
+        type="button"
         className="cart-remove-btn"
-        title="Remove item"
-        onClick={() => onAction('Remove Item')}
+        title="Remove item from cart"
+        onClick={handleRemove}
+        aria-label="Remove item"
       >
         <Trash2 size={18} />
       </button>
-
     </div>
   );
 };

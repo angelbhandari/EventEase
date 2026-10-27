@@ -1,0 +1,83 @@
+.not-found-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+  text-align: center;
+}
+
+.not-found-card {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 56px 36px;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.not-found-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background-color: var(--color-coral-light);
+  color: var(--color-coral-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-pill);
+  margin-bottom: 20px;
+}
+
+.not-found-code {
+  font-size: 6rem;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--color-gold);
+  margin-bottom: 8px;
+}
+
+.not-found-title {
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.not-found-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+.not-found-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  .not-found-card {
+    padding: 36px 20px;
+  }
+
+  .not-found-code {
+    font-size: 4.5rem;
+  }
+
+  .not-found-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .not-found-actions a {
+    width: 100%;
+  }
+}

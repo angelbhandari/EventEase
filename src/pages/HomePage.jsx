@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Sparkles, ArrowRight, Star, ShieldCheck, Award, HeartHandshake } from 'lucide-react';
 import { categoriesData } from '../data/eventsData';

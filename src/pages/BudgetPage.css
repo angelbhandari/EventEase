@@ -16,6 +16,11 @@
   flex-direction: column;
 }
 
+.metric-card.card-deficit {
+  border-color: var(--color-coral);
+  background-color: var(--color-coral-light);
+}
+
 .metric-card-top {
   display: flex;
   align-items: center;
@@ -55,6 +60,25 @@
   color: var(--text-muted);
 }
 
+.edit-budget-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-gold-dark);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-gold);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.edit-budget-btn:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-1px);
+}
 
 .metric-label {
   font-size: 0.9rem;
@@ -119,11 +143,26 @@
   transition: width 1s ease-in-out;
 }
 
+.progress-fill-over {
+  background: var(--color-coral-dark);
+}
+
 .progress-labels {
   display: flex;
   justify-content: space-between;
   font-size: 0.85rem;
   color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.cart-sync-toggle-row {
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sync-text {
+  font-size: 0.9rem;
+  color: var(--text-primary);
 }
 
 /* EXPENSE SECTION */
@@ -146,9 +185,14 @@
   color: var(--text-secondary);
 }
 
-.static-btn {
-  padding: 10px 20px;
-  font-size: 0.875rem;
+.expense-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reset-btn {
+  border-color: var(--border-subtle);
 }
 
 .expense-cards-grid {
@@ -157,17 +201,66 @@
   gap: 24px;
 }
 
+/* MODAL FORMS */
+.icon-picker-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
 
+.icon-choice-btn {
+  font-size: 1.3rem;
+  padding: 8px 12px;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
 
+.icon-choice-btn:hover {
+  background-color: var(--bg-ivory);
+  transform: scale(1.1);
+}
 
+.icon-choice-btn.active {
+  border-color: var(--color-gold);
+  background-color: var(--color-gold-light);
+  transform: scale(1.1);
+}
 
+.category-amounts-row {
+  display: flex;
+  gap: 16px;
+}
 
+.flex-1 {
+  flex: 1;
+}
 
+.mb-20 {
+  margin-bottom: 20px;
+}
 
+.mb-16 {
+  margin-bottom: 16px;
+}
 
+.text-left {
+  text-align: left;
+}
 
-
-
-
-
-
+@media (max-width: 768px) {
+  .expense-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .expense-header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .category-amounts-row {
+    flex-direction: column;
+  }
+}
