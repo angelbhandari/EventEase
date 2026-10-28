@@ -13,7 +13,7 @@ import {
   AlertCircle,
 } from 'lucide-react';
 
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/AuthContext.js';
 
 import { useToast } from '../context/ToastContext';
 

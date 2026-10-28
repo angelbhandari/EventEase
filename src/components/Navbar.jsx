@@ -3,7 +3,7 @@ import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { Sparkles, ShoppingBag, Menu, X, LogOut, LayoutDashboard } from 'lucide-react';
 import { useSelector } from 'react-redux';
 import { selectCartCount } from '../store/cartSlice';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/AuthContext.js';
 import { useToast } from '../context/ToastContext';
 import './Navbar.css';
 const Navbar = () => {
